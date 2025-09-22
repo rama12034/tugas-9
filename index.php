@@ -18,7 +18,10 @@
                     <th class="py-2 px-4">Nama Barang</th>
                     <th class="py-2 px-4">Stok</th>
                     <th class="py-2 px-4">Harga</th>
+                    <th class="py-2 px-4">Tanggal Expired</th>
                     <th class="py-2 px-4">Aksi</th>
+                    
+
                 </tr>
             </thead>
             <tbody>
@@ -30,6 +33,7 @@
                         <td class='py-2 px-4'>{$data['nama_barang']}</td>
                         <td class='py-2 px-4'>{$data['stok']}</td>
                         <td class='py-2 px-4'>{$data['harga']}</td>
+                        <td class='py-2 px-4'>{$data['tanggal_expired']}</td>
                         <td class='py-2 px-4'>
                             <a href='ubah.php?id={$data['id_barang']}' class='bg-yellow-400 text-white px-3 py-1 rounded hover:bg-yellow-500'>Ubah</a>
                             <a href='hapus.php?id={$data['id_barang']}' onclick=\"return confirm('Yakin hapus?');\" class='bg-red-500 text-white px-3 py-1 rounded hover:bg-red-600 ml-2'>Hapus</a>

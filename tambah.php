@@ -5,6 +5,7 @@ if ($_SERVER['REQUEST_METHOD'] == 'POST') {
     $nama_barang = $_POST['nama_barang'];
     $stok        = $_POST['stok'];
     $harga       = $_POST['harga'];
+    $tanggal_expired = $_POST['tanggal_expired'];
 
     $insert = mysqli_query($koneksi, "INSERT INTO barang (nama_barang, stok, harga) VALUES ('$nama_barang', '$stok', '$harga')");
 
@@ -35,6 +36,10 @@ if ($_SERVER['REQUEST_METHOD'] == 'POST') {
 
             <label class="block mb-2">Harga</label>
             <input type="number" name="harga" class="border p-2 w-full mb-4 rounded" required>
+
+              <label class="block mb-2">Tanggal Expired</label>
+            <input type="date" name="tanggal_expired" class="border p-2 w-full mb-4 rounded" required>
+
 
             <button type="submit" class="bg-blue-500 text-white px-4 py-2 rounded hover:bg-blue-600">Simpan</button>
             <a href="index.php" class="ml-2 text-gray-600 hover:underline">Kembali</a>

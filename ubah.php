@@ -9,8 +9,9 @@ if ($_SERVER['REQUEST_METHOD'] == 'POST') {
     $nama_barang = $_POST['nama_barang'];
     $stok        = $_POST['stok'];
     $harga       = $_POST['harga'];
+    $harga       = $_POST['tanggal_expired'];
 
-    $update = mysqli_query($koneksi, "UPDATE barang SET nama_barang='$nama_barang', stok='$stok', harga='$harga' WHERE id_barang='$id'");
+    $update = mysqli_query($koneksi, "UPDATE barang SET nama_barang='$nama_barang', stok='$stok', harga='$harga',tanggal_expired='$tanggal_expired' WHERE id_barang='$id'");
 
     if ($update) {
         header("Location: index.php");
@@ -40,9 +41,13 @@ if ($_SERVER['REQUEST_METHOD'] == 'POST') {
             <label class="block mb-2">Harga</label>
             <input type="number" name="harga" value="<?php echo $data['harga']; ?>" class="border p-2 w-full mb-4 rounded" required>
 
-            <button type="submit" class="bg-yellow-400 text-white px-4 py-2 rounded hover:bg-yellow-500">Update</button>
-            <a href="index.php" class="ml-2 text-gray-600 hover:underline">Kembali</a>
-        </form>
+           <label class="block mb-2">Tanggal Expired</label>
+    <input type="date" name="tanggal_expired" 
+           value="<?php echo $data['tanggal_expired']; ?>" 
+           class="border p-2 w-full mb-4 rounded" required>
+    <button type="submit" class="bg-yellow-400 text-white px-4 py-2 rounded hover:bg-yellow-500">Update</button>
+</form>
+
     </div>
 </body>
 </html>
